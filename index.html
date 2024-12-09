@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detector</title>
+    <style>
+        :root {
+            --bg-color: white;
+            --text-color: black;
+            --input-bg: #f0f0f0;
+            --input-border: #ccc;
+            --header-bg: #f4f4f4;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #121212;
+                --text-color: white;
+                --input-bg: #333;
+                --input-border: #555;
+                --header-bg: #1e1e1e;
+            }
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+
+        .header {
+            background-color: var(--header-bg);
+            color: var(--text-color);
+            padding: 15px;
+            text-align: left;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding-top: 60px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #mainInput {
+            width: 80%;
+            max-width: 500px;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            border: 1px solid var(--input-border);
+            border-radius: 5px;
+        }
+
+        #submitButton {
+            padding: 10px 20px;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #submitButton:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Phishing Detector</h1>
+    </div>
+    <div class="content">
+        <textarea id="mainInput" rows="25" placeholder="Enter the message here"></textarea>
+        <button id="submitButton">Submit</button>
+    </div>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            const inputText = document.getElementById('mainInput').value;
+            alert('The message was ' + inputText);
+        });
+    </script>
+</body>
+</html>
