@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import joblib
 
 app = Flask(__name__)
+CORS(app)
 
-model = joblib.load('Model\spam_classifier.joblib')
-vectorizer = joblib.load('Model\cv.joblib')
+model = joblib.load('Model/spam_classifier.joblib')
+vectorizer = joblib.load('Model/cv.joblib')
 
 @app.route('/predict', methods=['POST'])
 def predict_spam():
@@ -16,8 +18,7 @@ def predict_spam():
     prediction = model.predict(transformed_message)
     return jsonify({
         'message': message,
-        'is_spam': bool(prediction[0]),
-        'spam_probability': float(model.predict_proba(transformed_message)[0][1])
+        'is_spam': bool(prediction[0])
     })
 
 if __name__ == '__main__':

@@ -92,15 +92,13 @@ body, html {
     border-radius: 5px;
     width: 65%;
     max-width: 300px;
-    background-color: #f5f5f5;
+    font-weight: bold;
+    font-size: 1.2em;
     
 }
 
 #toggle:checked ~ #resultContainer {
     display: block;
-    color: white; 
-    background-color: #333;
-    border: 2px solid #ccc;
 }
 
 #resultContainer.spam {

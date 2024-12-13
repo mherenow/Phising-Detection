@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phishing Detection</title>
     <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="header">
@@ -12,11 +13,10 @@
     </div>
 
     <div class="content">
-        <textarea id="mainInput" placeholder="Enter text to check..."></textarea>
+        <textarea id="mainInput" rows="25" placeholder="Enter text to check..."></textarea>
         <label for="toggle" class="button" id="submitButton">Check</label>
         <input type="checkbox" id="toggle" class="toggle-input">
         <div id="resultContainer" class="not-spam">
-            <h2>Result</h2>
             <p class="ResultofSpam"></p>
         </div>
     </div>
